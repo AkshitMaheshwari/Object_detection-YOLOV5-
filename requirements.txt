@@ -1,4 +1,5 @@
+numpy<2
+torch
+opencv-python-headless
+Pillow
 streamlit
-torch==2.2.2
-opencv-python
-numpy
