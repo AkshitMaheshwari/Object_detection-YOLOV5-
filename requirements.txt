@@ -1,4 +1,4 @@
 streamlit
-pytorch
+torch==2.2.2+cpu
 opencv-python
 numpy
