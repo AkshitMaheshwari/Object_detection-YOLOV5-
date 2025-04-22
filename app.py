@@ -30,20 +30,16 @@ def detect_objects(frame):
             colors[label] = [random.randint(0, 255) for _ in range(3)]
         color = colors[label]
 
-        # Draw bounding box
         cv2.rectangle(frame, (x1, y1), (x2, y2), color, 1)
 
-        # Label text and size
         label_text = f"{label} ({conf:.2f})"
         font_scale = 0.70
         font_thickness = 1
         font = cv2.FONT_HERSHEY_SIMPLEX
         (text_width, text_height), baseline = cv2.getTextSize(label_text, font, font_scale, font_thickness)
 
-        # Draw filled rectangle behind text
         cv2.rectangle(frame, (x1, y1 - text_height - 4), (x1 + text_width, y1), color, -1)
 
-        # Put label text
         cv2.putText(frame, label_text, (x1, y1 - 2), font, font_scale, (255, 255, 255), font_thickness, cv2.LINE_AA)
 
     return frame
